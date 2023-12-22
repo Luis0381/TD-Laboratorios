@@ -1,30 +1,29 @@
-# Laboratorio Nº4 de Transmisión de Datos
+# Laboratorio Nº7 - Interfaz de Socket
 
 ## 📚 Enunciado
 
-Como parte de su trabajo le solicitan la fabricación de una botonera con interfaz USB que debe emular un teclado, utilizando los botones de la CIAA(4 teclas) y reproduciendo los caracteres “q”, “w”, “e”, “r”.  
+Se desea crear una aplicación distribuida de mensajería la cual consta de un servidor el cual envía en simultáneo mensajes a todas las aplicaciones cliente instaladas en una determinada subred.  
 
-En este laboratorio usted configurará el puerto USB-OTG. (On The Go)  
+Las aplicaciones tienen que hacer lo siguiente:  
 
-### Funcionamiento
+● Servidor:  
 
-Cada paquete enviado entre el Host y el Device tiene los campos:  
+Al iniciarse la aplicación debe mostrar por pantalla un mensaje de bienvenida. A continuación debe abrir un puerto efímero aleatorio entre el 50.000 y el 65.000 (TCP o UDP según su criterio de diseño). Luego, la aplicación debe solicitar el ingreso de un mensaje vía teclado (de hasta 200 caracteres), enviar el mismo a todos los hosts de la subred y quedar a la espera de la escritura de un nuevo mensaje.  
 
-● Addr: el host le asigna una dirección para identificar el dispositivo dentro del bus (se pueden conectar hasta 127 dispositivos).  
-● Endpoint: fuente o sumidero de datos. Puede haber hasta 16 endpoints por dispositivo.  
-● Dirección: se lo mira desde el Host (IN si el paquete ingresa al host y OUT si va hacia el dispositivo).  
+● Cliente:  
 
-Usaremos el USB como HID (dispositivo de interfaz humana). Una de las características de estos dispositivos es la transferencia de paquetes por interrupción.  
+Al iniciarse la aplicación debe mostrar por pantalla un mensaje de bienvenida. A continuación debe abrir el puerto registrado 2.500 (TCP o UDP según su criterio de diseño) y quedar a la espera de la recepción de un mensaje por parte del servidor. Una vez llegado un mensaje, la aplicación debe mostrar por pantalla la siguiente información:  
 
-### Actividades
+• Fecha y hora de la PC cliente.  
+• IP y puerto desde el que llega el mensaje.  
+• Mensaje.  
 
-Usando como guía el ejemplo del mouse:  
+En ambos casos debe realizar el control de error de los ingresos de datos, funciones y las llamadas al sistema utilizadas, mostrando mensajes informativos en caso de falla.  
 
-1. Generar el descriptor de reportes, ubicado en el archivo “hid_desc.c”. El mismo debe responder a los parámetros de un teclado, recuerde consultar los documentos adjuntos para ver la estructura de los descriptores y compararlo con el del ejemplo. (“descriptores.pdf” y “usbd_hid.h”)  
+### Consideraciones:
 
-2. Generar un descriptor de string apropiado, utilizando una combinación de su nombre y apellido como número de serie del teclado (que no supere los 20 caracteres). Esto también lo realiza en el archivo “hid_desc.c”.  
-
-3. Dentro del archivo “hid_keyboard.c”, completar las implementaciones de las rutinas de atención de interrupciones de las 4 teclas, (utilizando la variable “presionadas”) y de la función “Keyboard_UpdateReport”. La misma debe emular las teclas “q, w, e, r” mapeando las teclas 1, 2, 3 y 4. (Consultar el codigo de teclas en el archivo “hut1_21.pdf” )  
+• Debe usar IPv4 como protocolo de Internet.  
+• Para evitar problemas de comunicación entre las aplicaciones, puede clonar la máquina virtual Ubuntu (disponible en Classroom) y hacer correr una aplicación en cada una para probar el laboratorio. En este caso, la configuración de red de cada máquina virtual debe ser “Red interna” (Nombre de la red “LAN”) y se le debe asignar una IP estática a cada una dentro de una misma red (si quiere, puede usar para su comodidad la red 192.168.1.0/24).  
 
 ## Construidos con 🛠️
 
@@ -34,4 +33,7 @@ Usando como guía el ejemplo del mouse:
 
 ## 👨‍💻 Autor
 
-- Luis Medina Raed
+- Grellet, Alejandro
+- Medina Raed, Luis Eugenio
+- Padros, Marcos Isaias
+- Vaca Paz, Diego
