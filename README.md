@@ -28,4 +28,6 @@ Tenga en cuenta que luego de leer un valor, deberá borrar el Bit INT. De lo con
 
 ## 👨‍💻 Autor
 
-- Luis Medina Raed
+- Medina Raed, Luis Eugenio
+- Padros, Marcos Isaias
+- Vaca Paz, Diego
