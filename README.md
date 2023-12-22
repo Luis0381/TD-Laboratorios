@@ -34,4 +34,5 @@ c. Cuando se reciba un caracter “e”, la cuenta debe volver a cero.
 
 ## 👨‍💻 Autor
 
-- Luis Medina Raed
+- Lozano, Iñaki Fernando
+- Medina Raed, Luis Eugenio
