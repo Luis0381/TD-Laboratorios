@@ -34,4 +34,7 @@ Usando como guía el ejemplo del mouse:
 
 ## 👨‍💻 Autor
 
-- Luis Medina Raed
+- Grellet, Alejandro
+- Medina Raed, Luis Eugenio
+- Padros, Marcos Isaias
+- Vaca Paz, Diego Isaias
