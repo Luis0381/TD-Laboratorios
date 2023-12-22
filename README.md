@@ -6,4 +6,6 @@
 
 ## 👨‍💻 Autor
 
-- Luis Medina Raed
+- Medina Raed, Luis Eugenio
+- Padros, Marcos Isaias
+- Vaca Paz, Diego
